@@ -32,7 +32,6 @@ def create_item(name):
         if inp_sto["name"] == name:
             print("selected store name... ", inp_sto["name"])
 
-            print(" ")
             new_item = {"name":request_data["name"], "price":request_data["price"]}
             print("this are new item which are going to add... ",new_item)
             print(" ")
