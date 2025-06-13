@@ -1,13 +1,19 @@
 from flask import request, Blueprint
 from .sevices import *  # service spelling is wrong but kept as-is for now
+from flask import Flask, request, jsonify
+
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
-@bp.route('/')
-def index():
-    return "User Index"
+@bp.route('/get_all_user', methods=['GET'])
+def get_users():
+    result = get_users_from_services()
+    return result
 
-
+# @bp.route('/admin_dashboard/<int:user_id>', methods=['GET'])
+# def admin_dashboard_route(user_id):
+#     dashboard_data = admin_dashboard(user_id)
+#     return jsonify(dashboard_data)
 # store = [
 #     {
 #         "name":"my store",

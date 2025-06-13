@@ -15,6 +15,7 @@ class User(db.Model):
     state = db.Column(db.String(70), nullable=False)
     country = db.Column(db.String(30), nullable=False)
     city = db.Column(db.String(70), nullable=False)
+    is_delete = db.Column(db.Boolean, nullable=False, default=0)
 
     def to_dict(self):
         return {
@@ -28,7 +29,8 @@ class User(db.Model):
             "address": self.address,
             "state": self.state,
             "country": self.country,
-            "city": self.city
+            "city": self.city,
+            "is_delete" : self.is_delete
         }
 
     def __repr__(self):
