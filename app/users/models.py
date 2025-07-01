@@ -2,7 +2,6 @@ from app import db
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
 
-
 class User(db.Model):
     __tablename__ = 'users_table'
     
