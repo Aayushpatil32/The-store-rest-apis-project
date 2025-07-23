@@ -70,5 +70,4 @@ def get_users():
 #             return {"items": i}
 #     return {"message": "store not found"}, 404
     
-
 # hsd
