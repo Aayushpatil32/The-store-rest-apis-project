@@ -72,5 +72,11 @@ def get_users():
     
 # hsd
 
+@bp.route('/adding_user', methods=['POST'])
+def add_users(data):
+    data = request.get_json()
+    result = adding_user_by_service(data)
+    return jsonify(result)
+
 
 
