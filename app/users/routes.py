@@ -73,10 +73,10 @@ def get_users():
 # hsd
 
 @bp.route('/adding_user', methods=['POST'])
-def add_users(data):
+def add_users():
     data = request.get_json()
-    result = adding_user_by_service(data)
-    return jsonify(result)
+    result, status_code = adding_user_by_service(data)
+    return jsonify(result), status_code
 
 
 
