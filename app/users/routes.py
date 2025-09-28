@@ -5,9 +5,9 @@ from flask import Flask, request, jsonify
 
 bp = Blueprint('user', __name__, url_prefix='/user')
 
-@bp.route('/get_all_user', methods=['GET'])
-def get_users():
-    result = get_users_from_services()
+@bp.route('/get_all_Customers', methods=['GET'])
+def get_Customers():
+    result = get_all_Customers_from_services()
     return result
 
 # @bp.route('/admin_dashboard/<int:user_id>', methods=['GET'])
@@ -72,11 +72,23 @@ def get_users():
     
 # hsd
 
-@bp.route('/adding_user', methods=['POST'])
-def add_users():
+@bp.route('/add_customer', methods=['POST'])
+def add_customer():
     data = request.get_json()
-    result, status_code = adding_user_by_service(data)
+    result, status_code = add_customer_by_service(data)
     return jsonify(result), status_code
+
+
+@bp.route('/update_customer/<int:customer_id>', methods=['PUT'])
+def update_customer(customer_id):
+    data = request.get_json()
+    result, status_code = update_customer_by_service(customer_id, data)
+    return jsonify(result), status_code
+
+
+
+
+
 
 
 

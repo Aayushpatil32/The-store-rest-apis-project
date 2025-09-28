@@ -2,10 +2,10 @@ from app import db
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
 
-class User(db.Model):
-    __tablename__ = 'users_table'
+class Customers(db.Model):
+    __tablename__ = 'customers_table'
     
-    id = db.Column(db.Integer, primary_key=True)
+    customer_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
@@ -21,7 +21,7 @@ class User(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "customer_id": self.id,
             "username": self.username,
             "first_name": self.first_name,
             "last_name": self.last_name,

@@ -12,7 +12,7 @@ from app import create_app
 from app import db
 target_metadata = db.metadata
 
-from app.users.models import User  # Import your models here
+from app.users.models import Customers  # Import your models here
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -24,7 +24,7 @@ fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-target_metadata = User.metadata  # or db.Model.metadata if you prefer
+target_metadata = Customers.metadata  # or db.Model.metadata if you prefer
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
