@@ -35,7 +35,5 @@ class Customers(db.Model):
             "is_delete" : self.is_delete
         }
 
-
-
     def __repr__(self):
         return f'<User {self.id}>'
